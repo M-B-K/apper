@@ -1,0 +1,27 @@
+@mixin link($color) {
+  text-decoration: none;
+  color: $color;
+}
+
+@mixin flex($dir, $jus, $item) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jus;
+  align-items: $item;
+}
+
+@mixin button($bg-col, $border-col, $tx-col) {
+  background-color: $bg-col;
+  padding: 8px 20px;
+  border: 2px solid $border-col;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: $tx-col;
+}
+
+@mixin grid($gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: $gap;
+}
