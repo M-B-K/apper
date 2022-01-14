@@ -18,6 +18,10 @@
   z-index: 1;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .about .continer h2, .features h2, .download .continer h2, .price .continer h2, .contact .continer h2 {
   color: #37474f;
   padding-top: 32px;
@@ -538,7 +542,7 @@ body {
 }
 
 .about {
-  padding: 80px 40px 0px;
+  padding: 80px 40px 0px !important;
   position: relative;
 }
 
@@ -713,7 +717,7 @@ body {
   background-image: linear-gradient(to right, rgba(0, 172, 217, 0.62)), url("../image/download.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 160px auto;
+  padding: 160px auto;
   min-height: 600px;
   position: relative;
 }

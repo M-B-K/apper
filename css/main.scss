@@ -13,6 +13,9 @@
   background-color: rgba(3, 186, 213, 1);
   z-index: 1;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 %h2 {
   color: #37474f;
@@ -337,7 +340,7 @@ body {
   }
 }
 .about {
-  padding: 80px 40px 0px;
+  padding: 80px 40px 0px !important;
   position: relative;
   @include breakpoints(large) {
     padding: 0 0 100px;
@@ -469,7 +472,7 @@ body {
     url("../image/download.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 160px auto;
+  padding: 160px auto;
   min-height: 600px;
   position: relative;
   .continer {
