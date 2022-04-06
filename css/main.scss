@@ -6,15 +6,16 @@
 
 @import "./variable/var";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: rgba(3, 186, 213, 1);
   z-index: 1;
-}
-html {
-  scroll-behavior: smooth;
 }
 
 %h2 {
@@ -32,7 +33,7 @@ html {
     top: 80px;
     left: 50%;
     transform: translateX(-50%);
-    transition: 1s;
+    transition: 0.6s;
   }
   &:hover {
     &::after {
@@ -42,7 +43,7 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Cairo', sans-serif;
 }
 
 .hero {
@@ -111,7 +112,6 @@ body {
         }
 
         .nav-m {
-          position: relative;
           .icon {
             width: 30px;
             margin-top: 10px;
@@ -126,27 +126,33 @@ body {
               height: 2px;
               background-color: #fafafa;
               margin-bottom: 6px;
+              position: relative;
               &:nth-child(2) {
                 width: 60%;
-                transition: 0.5s;
+                transition: 0.3s;
               }
             }
           }
 
           .nav-ul {
-            display: none;
-
             @include breakpoints(SmallMobile) {
-              display: inline;
+
+
             }
             ul {
+              display: block;
+              opacity: 0;
+              visibility: hidden;
+              z-index: -1;
+              transition: all 1s ease;
+              width: 100vw;
               list-style: none;
               background-color: #fafafa;
               margin: 0;
               padding: 0;
               position: absolute;
               left: 0px;
-              top: 50px;
+              top: 200px;
               li {
                 min-width: 200px;
                 text-align: center;
@@ -158,33 +164,28 @@ body {
                   display: block;
                   padding: 15px;
                   text-decoration: none;
-                  transition: 0.5s;
+                  transition: 0.3s;
                 }
               }
             }
           }
 
-          &:hover {
+
             .icon {
-              span {
-                &:nth-child(2) {
-                  width: 100%;
+              &:hover {
+                span {
+                  &:nth-child(2) {
+                    width: 100%;
+                  }
                 }
-              }
-            }
-            .nav-ul {
-              ul {
-                display: block;
-              }
-            }
-            &::after {
-              content: "";
-              border-width: 15px;
-              border-style: solid;
-              border-color: transparent transparent #fafafa;
-              position: absolute;
-              left: 0px;
-              top: 20px;
+                + .nav-ul {
+                  ul {
+                    z-index: 99;
+                    top: 50px;
+                    opacity: 1;
+                    visibility: visible;
+                  }
+                }   
             }
           }
         }
@@ -203,7 +204,7 @@ body {
           margin-right: 20px;
           font-size: 18px;
           font-weight: bold;
-          transition: 0.5s;
+          transition: 0.3s;
           &:hover {
             font-size: 24px;
             color: $main;
@@ -232,7 +233,7 @@ body {
       button.btt {
         @include button(transparent, $main, $main);
         margin-right: 20px;
-        transition: 0.5s;
+        transition: 0.3s;
         &:hover {
           @include button($main, transparent, $sec);
         }
@@ -281,7 +282,6 @@ body {
         text-align: center;
         margin-top: 40px;
         margin-bottom: 40px;
-        // margin-bottom: 0;
       }
       h1 {
         font-size: 40px;
@@ -312,7 +312,7 @@ body {
         font-size: 16px;
         padding: 10px 14px;
         background-color: transparent;
-        transition: 0.5s;
+        transition: 0.3s;
         @include breakpoints(SmallMobile) {
           margin-bottom: 20px;
         }
@@ -340,7 +340,7 @@ body {
   }
 }
 .about {
-  padding: 80px 40px 0px !important;
+  padding: 0px 40px 0px !important;
   position: relative;
   @include breakpoints(large) {
     padding: 0 0 100px;
@@ -352,6 +352,7 @@ body {
 
     .row {
       margin-top: 80px;
+      padding-bottom: 80px;
       @include grid(30px);
       .col {
         padding-right: 10px;
@@ -369,7 +370,7 @@ body {
           color: #03bad5;
           margin-bottom: 10px;
           font-weight: 900;
-          transition: 1s;
+          transition: 0.6s;
         }
         h3 {
           font-weight: 600;
@@ -509,7 +510,7 @@ body {
         padding: 14px 20px;
         margin-right: 10px;
         width: 160px;
-        transition: 0.5s;
+        transition: 0.3s;
         &:hover {
           background-color: $main;
           color: $sec;
@@ -547,14 +548,12 @@ body {
 
 .price {
   padding-top: 80px;
-  // margin: 80px auto 0px auto;
   padding: 50px auto;
   position: relative;
   padding-bottom: 120px;
   .continer {
     h2 {
       @extend %h2;
-      // margin: 40px 0;
     }
     .row {
       margin-top: 80px;
@@ -563,7 +562,7 @@ body {
 
       .col {
         background-color: $main;
-        transition: 0.5s;
+        transition: 0.3s;
         margin: 0 20px;
 
         .head {
@@ -607,7 +606,7 @@ body {
               font-weight: 600;
               width: 160px;
               font-size: 18px;
-              transition: 0.5s;
+              transition: 0.3s;
               &:hover {
                 background: $main;
                 color: rgba(0, 172, 217, 0.62);
@@ -637,7 +636,7 @@ body {
             position: absolute;
             left: 8px;
             top: 8px;
-            transition: 0.5s;
+            transition: 0.3s;
           }
         }
         &:hover {
@@ -708,7 +707,7 @@ body {
                 background-color: $main;
                 border: 1px solid #ced4da;
                 border-radius: 4px;
-                transition: 0.5s;
+                transition: 0.3s;
                 &:focus {
                   border-color: #80bdff;
                   outline: 0;
@@ -728,7 +727,7 @@ body {
               background-color: $main;
               border: 1px solid #ced4da;
               border-radius: 4px;
-              transition: 0.5s;
+              transition: 0.3s;
               &:focus {
                 border-color: #80bdff;
                 outline: 0;
@@ -741,7 +740,7 @@ body {
               margin-top: 24px !important;
               font-size: 16px;
               line-height: 1.5;
-              transition: 0.5s;
+              transition: 0.3s;
               cursor: pointer;
               background: linear-gradient(
                 to right,
@@ -838,6 +837,10 @@ body {
       a {
         @include link(#8d8c8c);
         margin-right: 10px;
+        transition: 0.15s;
+        &:hover{
+          color: #03bad5;
+        }
       }
     }
     p {

@@ -10,16 +10,16 @@
   margin: auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #03bad5;
   z-index: 1;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .about .continer h2, .features h2, .download .continer h2, .price .continer h2, .contact .continer h2 {
@@ -40,8 +40,8 @@ html {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .about .continer h2:hover::after, .features h2:hover::after, .download .continer h2:hover::after, .price .continer h2:hover::after, .contact .continer h2:hover::after {
@@ -49,7 +49,7 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Cairo', sans-serif;
 }
 
 .hero {
@@ -170,10 +170,6 @@ body {
   }
 }
 
-.hero .navbar nav .logo .nav-m {
-  position: relative;
-}
-
 .hero .navbar nav .logo .nav-m .icon {
   width: 30px;
   margin-top: 10px;
@@ -200,32 +196,30 @@ body {
   height: 2px;
   background-color: #fafafa;
   margin-bottom: 6px;
+  position: relative;
 }
 
 .hero .navbar nav .logo .nav-m .icon span:nth-child(2) {
   width: 60%;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.hero .navbar nav .logo .nav-m .nav-ul {
-  display: none;
-}
-
-@media (max-width: 620px) {
-  .hero .navbar nav .logo .nav-m .nav-ul {
-    display: inline;
-  }
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .hero .navbar nav .logo .nav-m .nav-ul ul {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  width: 100vw;
   list-style: none;
   background-color: #fafafa;
   margin: 0;
   padding: 0;
   position: absolute;
   left: 0px;
-  top: 50px;
+  top: 200px;
 }
 
 .hero .navbar nav .logo .nav-m .nav-ul ul li {
@@ -242,26 +236,19 @@ body {
   display: block;
   padding: 15px;
   text-decoration: none;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.hero .navbar nav .logo .nav-m:hover .icon span:nth-child(2) {
+.hero .navbar nav .logo .nav-m .icon:hover span:nth-child(2) {
   width: 100%;
 }
 
-.hero .navbar nav .logo .nav-m:hover .nav-ul ul {
-  display: block;
-}
-
-.hero .navbar nav .logo .nav-m:hover::after {
-  content: "";
-  border-width: 15px;
-  border-style: solid;
-  border-color: transparent transparent #fafafa;
-  position: absolute;
-  left: 0px;
-  top: 20px;
+.hero .navbar nav .logo .nav-m .icon:hover + .nav-ul ul {
+  z-index: 99;
+  top: 50px;
+  opacity: 1;
+  visibility: visible;
 }
 
 .hero .navbar nav ul {
@@ -294,8 +281,8 @@ body {
   margin-right: 20px;
   font-size: 18px;
   font-weight: bold;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .hero .navbar nav ul a:hover {
@@ -334,8 +321,8 @@ body {
   font-weight: bold;
   color: #ffffff;
   margin-right: 20px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .hero .navbar nav button.btt:hover {
@@ -502,8 +489,8 @@ body {
   font-size: 16px;
   padding: 10px 14px;
   background-color: transparent;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 @media (max-width: 620px) {
@@ -542,7 +529,7 @@ body {
 }
 
 .about {
-  padding: 80px 40px 0px !important;
+  padding: 0px 40px 0px !important;
   position: relative;
 }
 
@@ -554,6 +541,7 @@ body {
 
 .about .continer .row {
   margin-top: 80px;
+  padding-bottom: 80px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
@@ -587,8 +575,8 @@ body {
   color: #03bad5;
   margin-bottom: 10px;
   font-weight: 900;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .about .continer .row .col h3 {
@@ -787,8 +775,8 @@ body {
   padding: 14px 20px;
   margin-right: 10px;
   width: 160px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .download .continer .donlink a:hover {
@@ -847,8 +835,8 @@ body {
 
 .price .continer .row .col {
   background-color: #ffffff;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   margin: 0 20px;
 }
 
@@ -894,8 +882,8 @@ body {
   font-weight: 600;
   width: 160px;
   font-size: 18px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .price .continer .row .col .bod .row2 button:hover {
@@ -924,8 +912,8 @@ body {
   position: absolute;
   left: 8px;
   top: 8px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .price .continer .row .headsps:hover img {
@@ -1017,8 +1005,8 @@ body {
   background-color: #ffffff;
   border: 1px solid #ced4da;
   border-radius: 4px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .contact .continer .row .col1 form .row1 .col input:focus {
@@ -1038,8 +1026,8 @@ body {
   background-color: #ffffff;
   border: 1px solid #ced4da;
   border-radius: 4px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .contact .continer .row .col1 form .row2 textarea:focus {
@@ -1053,8 +1041,8 @@ body {
   margin-top: 24px !important;
   font-size: 16px;
   line-height: 1.5;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   cursor: pointer;
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 172, 217, 0.62)), to(rgba(105, 240, 174, 0.52)));
   background: linear-gradient(to right, rgba(0, 172, 217, 0.62), rgba(105, 240, 174, 0.52));
@@ -1178,6 +1166,12 @@ body {
   text-decoration: none;
   color: #8d8c8c;
   margin-right: 10px;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+
+.foot .continer .soicalicon a:hover {
+  color: #03bad5;
 }
 
 .foot .continer p {
