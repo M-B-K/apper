@@ -36,7 +36,7 @@ html {
   position: absolute;
   border-bottom: 2px solid #03bad5;
   width: 50px;
-  top: 80px;
+  top: 90px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -210,8 +210,8 @@ body {
   opacity: 0;
   visibility: hidden;
   z-index: -1;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   width: 100vw;
   list-style: none;
   background-color: #fafafa;
@@ -246,7 +246,7 @@ body {
 
 .hero .navbar nav .logo .nav-m .icon:hover + .nav-ul ul {
   z-index: 99;
-  top: 50px;
+  top: 60px;
   opacity: 1;
   visibility: visible;
 }
