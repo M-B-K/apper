@@ -24,7 +24,7 @@ html {
 
 .up {
   position: fixed;
-  bottom: 10px;
+  bottom: -50px;
   left: -50px;
   padding: 10px;
   font-size: 12px;
@@ -42,6 +42,7 @@ html {
 
 .up.show {
   left: 10px;
+  bottom: 10px;
 }
 
 .about .continer h2, .features h2, .download .continer h2, .price .continer h2, .contact .continer h2 {
