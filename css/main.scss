@@ -61,10 +61,17 @@
     }
   }
 }
-
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 /*************************************************** hero style ****************************************************/
 .hero {
-  background-image: linear-gradient(to right, rgba(0, 172, 217, 0.62), #03a9f4),
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 172, 217, 0.62),
+      #03a8f4b8
+    ),
     url("../image/hero-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -109,7 +116,7 @@
               + .nav-ul {
                 ul {
                   z-index: 99;
-                  top: 60px;
+                  left: 0px;
                   opacity: 1;
                   visibility: visible;
                 }
@@ -141,8 +148,14 @@
               margin: 0;
               padding: 0;
               position: absolute;
-              left: 0px;
-              top: 200px;
+              left: -500px;
+              top: 60px;
+              height: 100vh;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              width: 100%;
+              align-items: center;
               li {
                 min-width: 200px;
                 text-align: center;
@@ -165,9 +178,6 @@
       ul {
         @include flex(row, space-between, center);
         list-style: none;
-        @include breakpoints(SmallMobile) {
-          display: none;
-        }
 
         a {
           @include link($main);
@@ -180,24 +190,6 @@
             font-size: 24px;
             @include link($main);
           }
-
-          @include breakpoints(SmallMobile) {
-            margin: 0 10px 0 10px;
-            font-size: 16px;
-            &:hover {
-              color: $main;
-            }
-          }
-          @include breakpoints(mobile) {
-            &:hover {
-              color: $main;
-            }
-          }
-          @include breakpoints(small) {
-            &:hover {
-              color: $main;
-            }
-          }
         }
       }
 
@@ -208,9 +200,6 @@
         &:hover {
           @include button($main, transparent, $sec);
         }
-        @include breakpoints(SmallMobile) {
-          display: none;
-        }
       }
     }
   }
@@ -219,49 +208,14 @@
     color: $main;
     min-height: 600px;
     padding: 0 40px;
-    @include breakpoints(SmallMobile) {
-      @include flex(column, flex-start, center);
-      min-height: 500px;
-    }
-    @include breakpoints(mobile) {
-      @include flex(column, flex-start, center);
-      min-height: 900px;
-    }
-    @include breakpoints(small) {
-      @include flex(column, flex-start, center);
-      min-height: 1000px;
-    }
-    @include breakpoints(large) {
-      padding: 0;
-    }
 
     .col1 {
       padding-right: 10px;
-      @include breakpoints(SmallMobile) {
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        padding: 0 10px;
-      }
-      @include breakpoints(mobile) {
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        padding: 0 10px;
-      }
-      @include breakpoints(small) {
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 40px;
-      }
+
       h1 {
         font-size: 48px;
         line-height: 1.2;
         letter-spacing: 2px;
-        @include breakpoints(SmallMobile) {
-          font-size: 32px;
-          line-height: 1.2;
-        }
       }
       p {
         color: $main;
@@ -269,9 +223,6 @@
         line-height: 26px;
         font-size: 20px;
         font-weight: 700;
-        @include breakpoints(SmallMobile) {
-          font-size: 16px;
-        }
       }
       button {
         width: 120px;
@@ -283,9 +234,6 @@
         padding: 10px 14px;
         background-color: transparent;
         transition: 0.3s;
-        @include breakpoints(SmallMobile) {
-          margin-bottom: 20px;
-        }
         &:hover {
           background-color: $main;
           color: $sec;
@@ -296,15 +244,6 @@
     .col2 {
       img {
         transform: rotate3d(0, 1, 0, 180deg);
-        @include breakpoints(SmallMobile) {
-          display: none;
-        }
-        @include breakpoints(mobile) {
-          max-width: 450px;
-        }
-        @include breakpoints(medium) {
-          max-width: 500px;
-        }
       }
     }
   }
@@ -360,9 +299,104 @@
           }
         }
       }
+      ul {
+        @include breakpoints(SmallMobile) {
+          display: none;
+        }
+        a {
+          @include breakpoints(SmallMobile) {
+            margin: 0 10px 0 10px;
+            font-size: 16px;
+            &:hover {
+              color: $main;
+            }
+          }
+          @include breakpoints(mobile) {
+            &:hover {
+              color: $main;
+            }
+          }
+          @include breakpoints(small) {
+            &:hover {
+              color: $main;
+            }
+          }
+        }
+      }
+      button.btt {
+        @include breakpoints(SmallMobile) {
+          display: none;
+        }
+      }
+    }
+  }
+  .row {
+    @include breakpoints(SmallMobile) {
+      @include flex(column, flex-start, center);
+      min-height: 500px;
+    }
+    @include breakpoints(mobile) {
+      @include flex(column, flex-start, center);
+      min-height: 900px;
+    }
+    @include breakpoints(small) {
+      @include flex(column, flex-start, center);
+      min-height: 1000px;
+    }
+    @include breakpoints(large) {
+      padding: 0;
+    }
+    .col1 {
+      @include breakpoints(SmallMobile) {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 0 10px;
+      }
+      @include breakpoints(mobile) {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 0 10px;
+      }
+      @include breakpoints(small) {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+      h1 {
+        @include breakpoints(SmallMobile) {
+          font-size: 32px;
+          line-height: 1.2;
+        }
+      }
+      p {
+        @include breakpoints(SmallMobile) {
+          font-size: 16px;
+        }
+      }
+      button {
+        @include breakpoints(SmallMobile) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .col2 {
+      img {
+        @include breakpoints(SmallMobile) {
+          display: none;
+        }
+        @include breakpoints(mobile) {
+          max-width: 450px;
+        }
+        @include breakpoints(medium) {
+          max-width: 500px;
+        }
+      }
     }
   }
 }
+/*************************************************** about style ****************************************************/
 
 .about {
   padding: 0px 40px 0px !important;
@@ -494,7 +528,11 @@
 }
 
 .download {
-  background-image: linear-gradient(to right, rgba(0, 172, 217, 0.62)),
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 172, 217, 0.62),
+      #03a8f4b8
+    ),
     url("../image/download.jpg");
   background-size: cover;
   background-repeat: no-repeat;
