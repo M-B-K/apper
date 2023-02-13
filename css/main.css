@@ -423,11 +423,6 @@ div img {
   padding: 0px 40px 0px !important;
   position: relative;
 }
-@media (min-width: 1200px) {
-  .about {
-    padding: 0 0 100px;
-  }
-}
 .about .continer .row {
   margin-top: 80px;
   padding-bottom: 80px;
@@ -438,16 +433,6 @@ div img {
 .about .continer .row .col {
   padding-right: 10px;
   text-align: center;
-}
-@media (max-width: 620px) {
-  .about .continer .row .col {
-    padding: 0 10px;
-  }
-}
-@media (min-width: 620px) and (max-width: 767px) {
-  .about .continer .row .col {
-    padding: 0 10px;
-  }
 }
 .about .continer .row .col:hover i {
   transform: rotate(-360deg);
@@ -483,6 +468,24 @@ div img {
   left: 0;
 }
 
+/********************************************** respnseve about style ***********************************************/
+@media (min-width: 1200px) {
+  .about {
+    padding: 0 0 100px;
+  }
+}
+@media (max-width: 620px) {
+  .about .continer .row .col {
+    padding: 0 10px;
+  }
+}
+@media (min-width: 620px) and (max-width: 767px) {
+  .about .continer .row .col {
+    padding: 0 10px;
+  }
+}
+
+/*************************************************** features style ****************************************************/
 .features {
   background-color: #f0f1f3;
   margin-top: 75px;
@@ -500,40 +503,13 @@ div img {
   grid-gap: 12px;
   text-align: center;
 }
-@media (min-width: 620px) and (max-width: 767px) {
-  .features .row-1 {
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-  }
-}
-@media (min-width: 767px) and (max-width: 992px) {
-  .features .row-1 {
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-  }
-}
 .features .row-1 .col {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 12px;
 }
-@media (min-width: 767px) and (max-width: 992px) {
-  .features .row-1 .col {
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-  }
-}
 .features .row-1 .col .row-2 {
   padding: 0 20px;
-}
-@media (max-width: 620px) {
-  .features .row-1 .col .row-2 {
-    margin: 20px auto;
-    padding: 0;
-  }
-}
-@media (min-width: 620px) and (max-width: 767px) {
-  .features .row-1 .col .row-2 {
-    margin: 20px auto;
-    padding: 0;
-  }
 }
 .features .row-1 .col .row-2 img {
   display: block;
@@ -556,8 +532,38 @@ div img {
   padding-bottom: 25px;
 }
 
+/********************************************** respnseve features style ***********************************************/
+@media (min-width: 620px) and (max-width: 767px) {
+  .features .row-1 {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
+@media (min-width: 767px) and (max-width: 992px) {
+  .features .row-1 {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
+@media (min-width: 767px) and (max-width: 992px) {
+  .features .row-1 .col {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .features .row-1 .col .row-2 {
+    margin: 20px auto;
+    padding: 0;
+  }
+}
+@media (min-width: 620px) and (max-width: 767px) {
+  .features .row-1 .col .row-2 {
+    margin: 20px auto;
+    padding: 0;
+  }
+}
+
+/*************************************************** download style ****************************************************/
 .download {
-  background-image: linear-gradient(to right, rgba(0, 172, 217, 0.62), rgba(3, 168, 244, 0.7215686275)), url("../image/download.jpg");
+  background-image: linear-gradient(to right, rgba(0, 172, 217, 0.62), #03bad5), url("../image/download.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 160px auto;
@@ -639,6 +645,8 @@ div img {
   left: 0;
 }
 
+/********************************************** respnseve download style ***********************************************/
+/*************************************************** price style ****************************************************/
 .price {
   padding-top: 80px;
   padding: 50px auto;
@@ -656,6 +664,7 @@ div img {
   background-color: #ffffff;
   transition: 0.3s;
   margin: 0 20px;
+  box-shadow: -1px 0px 12px 4px rgba(26, 72, 79, 0.24);
 }
 .price .continer .row .col .head {
   padding-top: 40px;
@@ -700,7 +709,7 @@ div img {
   border: 2px solid rgba(0, 172, 217, 0.62);
 }
 .price .continer .row .col:hover {
-  box-shadow: -1px 0px 12px 4px rgba(26, 72, 79, 0.24);
+  scale: 0.9;
 }
 .price .continer .row .headsps .head {
   background: linear-gradient(to right, rgba(0, 172, 217, 0.62), rgba(105, 240, 174, 0.52));
@@ -721,6 +730,8 @@ div img {
   transform: rotate(45deg);
 }
 
+/********************************************** respnseve price style ***********************************************/
+/*************************************************** contact style ****************************************************/
 .contact {
   padding: 128px 20px 80px;
   background-color: #f0f1f3;
@@ -733,42 +744,6 @@ div img {
   display: grid;
   grid-template-columns: 62% 34%;
   grid-gap: 4%;
-}
-@media (max-width: 620px) {
-  .contact .continer .row {
-    grid-template-columns: 100%;
-    grid-gap: 60px;
-  }
-}
-@media (min-width: 620px) and (max-width: 767px) {
-  .contact .continer .row {
-    grid-template-columns: 100%;
-    grid-gap: 60px;
-  }
-}
-@media (min-width: 767px) and (max-width: 992px) {
-  .contact .continer .row {
-    grid-template-columns: 100%;
-    grid-gap: 60px;
-  }
-}
-@media (max-width: 620px) {
-  .contact .continer .row .col1 {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-@media (min-width: 620px) and (max-width: 767px) {
-  .contact .continer .row .col1 {
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-}
-@media (min-width: 767px) and (max-width: 992px) {
-  .contact .continer .row .col1 {
-    margin-left: 80px;
-    margin-right: 80px;
-  }
 }
 .contact .continer .row .col1 form .row1 {
   display: grid;
@@ -829,24 +804,6 @@ div img {
   color: rgba(0, 172, 217, 0.62);
   border: 2px solid rgba(0, 172, 217, 0.62);
 }
-@media (max-width: 620px) {
-  .contact .continer .row .col2 {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-@media (min-width: 620px) and (max-width: 767px) {
-  .contact .continer .row .col2 {
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-}
-@media (min-width: 767px) and (max-width: 992px) {
-  .contact .continer .row .col2 {
-    margin-left: 80px;
-    margin-right: 80px;
-  }
-}
 .contact .continer .row .col2 .head h3 {
   font-size: 28px;
   margin-bottom: 10px;
@@ -866,11 +823,6 @@ div img {
 }
 .contact .continer .row .col2 .info {
   margin-right: 30px;
-}
-@media (max-width: 620px) {
-  .contact .continer .row .col2 .info {
-    margin-right: 10px;
-  }
 }
 .contact .continer .row .col2 .info span {
   display: block;
@@ -894,6 +846,68 @@ div img {
   left: 0;
 }
 
+/********************************************** respnseve contact style ***********************************************/
+@media (max-width: 620px) {
+  .contact .continer .row {
+    grid-template-columns: 100%;
+    grid-gap: 60px;
+  }
+}
+@media (min-width: 620px) and (max-width: 767px) {
+  .contact .continer .row {
+    grid-template-columns: 100%;
+    grid-gap: 60px;
+  }
+}
+@media (min-width: 767px) and (max-width: 992px) {
+  .contact .continer .row {
+    grid-template-columns: 100%;
+    grid-gap: 60px;
+  }
+}
+@media (max-width: 620px) {
+  .contact .continer .row .col1 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+@media (min-width: 620px) and (max-width: 767px) {
+  .contact .continer .row .col1 {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+@media (min-width: 767px) and (max-width: 992px) {
+  .contact .continer .row .col1 {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+@media (max-width: 620px) {
+  .contact .continer .row .col2 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+@media (min-width: 620px) and (max-width: 767px) {
+  .contact .continer .row .col2 {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+@media (min-width: 767px) and (max-width: 992px) {
+  .contact .continer .row .col2 {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+@media (max-width: 620px) {
+  .contact .continer .row .col2 .info {
+    margin-right: 10px;
+  }
+}
+
+/*************************************************** footer style ****************************************************/
 .foot {
   background-color: #2b323f;
   padding-top: 96px;
@@ -934,4 +948,6 @@ div img {
   transform-origin: bottom right;
   right: 0;
   left: 0;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/********************************************** respnseve footer style ***********************************************//*# sourceMappingURL=main.css.map */

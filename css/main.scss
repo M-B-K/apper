@@ -395,9 +395,7 @@
 .about {
   padding: 0px 40px 0px !important;
   position: relative;
-  @include breakpoints(large) {
-    padding: 0 0 100px;
-  }
+
   .continer {
     h2 {
       @extend %h2;
@@ -410,12 +408,7 @@
       .col {
         padding-right: 10px;
         text-align: center;
-        @include breakpoints(SmallMobile) {
-          padding: 0 10px;
-        }
-        @include breakpoints(mobile) {
-          padding: 0 10px;
-        }
+
         &:hover i {
           transform: rotate(-360deg);
         }
@@ -454,6 +447,27 @@
   }
 }
 
+/********************************************** respnseve about style ***********************************************/
+
+.about {
+  @include breakpoints(large) {
+    padding: 0 0 100px;
+  }
+  .continer {
+    .row {
+      .col {
+        @include breakpoints(SmallMobile) {
+          padding: 0 10px;
+        }
+        @include breakpoints(mobile) {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
+/*************************************************** features style ****************************************************/
+
 .features {
   background-color: #f0f1f3;
   margin-top: 75px;
@@ -470,32 +484,13 @@
     max-width: 100%;
     padding-top: 60px;
     @include grid(12px);
-    @include breakpoints(mobile) {
-      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    }
-    @include breakpoints(small) {
-      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    }
+
     text-align: center;
 
     .col {
       @include grid(12px);
-
-      @include breakpoints(small) {
-        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-      }
-
       .row-2 {
         padding: 0 20px;
-        @include breakpoints(SmallMobile) {
-          margin: 20px auto;
-          padding: 0;
-        }
-        @include breakpoints(mobile) {
-          margin: 20px auto;
-          padding: 0;
-        }
-
         img {
           display: block;
           margin: 10px auto;
@@ -521,12 +516,37 @@
   }
 }
 
+/********************************************** respnseve features style ***********************************************/
+
+.features {
+  .row-1 {
+    @include breakpoints(mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+    @include breakpoints(small) {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+    .col {
+      @include breakpoints(small) {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      }
+      .row-2 {
+        @include breakpoints(SmallMobile) {
+          margin: 20px auto;
+          padding: 0;
+        }
+        @include breakpoints(mobile) {
+          margin: 20px auto;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+/*************************************************** download style ****************************************************/
 .download {
-  background-image: linear-gradient(
-      to right,
-      rgba(0, 172, 217, 0.62),
-      #03a8f4b8
-    ),
+  background-image: linear-gradient(to right, rgba(0, 172, 217, 0.62), $sec),
     url("../image/download.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -603,6 +623,10 @@
   }
 }
 
+/********************************************** respnseve download style ***********************************************/
+
+/*************************************************** price style ****************************************************/
+
 .price {
   padding-top: 80px;
   padding: 50px auto;
@@ -621,6 +645,7 @@
         background-color: $main;
         transition: 0.3s;
         margin: 0 20px;
+        box-shadow: -1px 0px 12px 4px rgba(26, 72, 79, 0.24);
 
         .head {
           padding-top: 40px;
@@ -673,7 +698,7 @@
           }
         }
         &:hover {
-          box-shadow: -1px 0px 12px 4px rgba(26, 72, 79, 0.24);
+          scale: 0.9;
         }
       }
       .headsps {
@@ -708,6 +733,10 @@
   }
 }
 
+/********************************************** respnseve price style ***********************************************/
+
+/*************************************************** contact style ****************************************************/
+
 .contact {
   padding: 128px 20px 80px;
   background-color: #f0f1f3;
@@ -721,31 +750,8 @@
       display: grid;
       grid-template-columns: 62% 34%;
       grid-gap: 4%;
-      @include breakpoints(SmallMobile) {
-        grid-template-columns: 100%;
-        grid-gap: 60px;
-      }
-      @include breakpoints(mobile) {
-        grid-template-columns: 100%;
-        grid-gap: 60px;
-      }
-      @include breakpoints(small) {
-        grid-template-columns: 100%;
-        grid-gap: 60px;
-      }
+
       .col1 {
-        @include breakpoints(SmallMobile) {
-          margin-left: 10px;
-          margin-right: 10px;
-        }
-        @include breakpoints(mobile) {
-          margin-left: 40px;
-          margin-right: 40px;
-        }
-        @include breakpoints(small) {
-          margin-left: 80px;
-          margin-right: 80px;
-        }
         form {
           .row1 {
             display: grid;
@@ -819,18 +825,6 @@
         }
       }
       .col2 {
-        @include breakpoints(SmallMobile) {
-          margin-left: 10px;
-          margin-right: 10px;
-        }
-        @include breakpoints(mobile) {
-          margin-left: 40px;
-          margin-right: 40px;
-        }
-        @include breakpoints(small) {
-          margin-left: 80px;
-          margin-right: 80px;
-        }
         .head {
           h3 {
             font-size: 28px;
@@ -852,9 +846,6 @@
         }
         .info {
           margin-right: 30px;
-          @include breakpoints(SmallMobile) {
-            margin-right: 10px;
-          }
           span {
             display: block;
             margin-top: 10px;
@@ -881,6 +872,62 @@
     left: 0;
   }
 }
+
+/********************************************** respnseve contact style ***********************************************/
+.contact {
+  .continer {
+    .row {
+      @include breakpoints(SmallMobile) {
+        grid-template-columns: 100%;
+        grid-gap: 60px;
+      }
+      @include breakpoints(mobile) {
+        grid-template-columns: 100%;
+        grid-gap: 60px;
+      }
+      @include breakpoints(small) {
+        grid-template-columns: 100%;
+        grid-gap: 60px;
+      }
+      .col1 {
+        @include breakpoints(SmallMobile) {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        @include breakpoints(mobile) {
+          margin-left: 40px;
+          margin-right: 40px;
+        }
+        @include breakpoints(small) {
+          margin-left: 80px;
+          margin-right: 80px;
+        }
+      }
+      .col2 {
+        @include breakpoints(SmallMobile) {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        @include breakpoints(mobile) {
+          margin-left: 40px;
+          margin-right: 40px;
+        }
+        @include breakpoints(small) {
+          margin-left: 80px;
+          margin-right: 80px;
+        }
+
+        .info {
+          @include breakpoints(SmallMobile) {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*************************************************** footer style ****************************************************/
 
 .foot {
   background-color: #2b323f;
@@ -919,3 +966,4 @@
     left: 0;
   }
 }
+/********************************************** respnseve footer style ***********************************************/
