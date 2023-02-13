@@ -70,6 +70,11 @@ body {
   overflow-x: hidden;
 }
 
+div img {
+  width: auto;
+  height: auto;
+}
+
 /*************************************************** hero style ****************************************************/
 .hero {
   background-image: linear-gradient(to right, rgba(0, 172, 217, 0.62), rgba(3, 168, 244, 0.7215686275)), url("../image/hero-bg.jpg");
