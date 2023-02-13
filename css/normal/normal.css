@@ -1,12 +1,12 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Cairo;
+  scroll-behavior: smooth;
 }
 
 .continer {
   max-width: 1200px;
   margin: auto;
-}
-/*# sourceMappingURL=normal.css.map */
+}/*# sourceMappingURL=normal.css.map */

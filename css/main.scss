@@ -6,10 +6,6 @@
 
 @import "./variable/var";
 
-html {
-  scroll-behavior: smooth;
-}
-
 .sticky {
   position: fixed;
   top: 0;
@@ -18,28 +14,30 @@ html {
   z-index: 1;
 }
 
-.up{
+/*************************************************** Up Button style ****************************************************/
+.up {
   position: fixed;
-    bottom: -50px;
-    left: -50px;
-    padding: 10px;
-    font-size: 12px;
-    background-color: #03bad5;
-    color: #fafafa;
-    border-radius: 6px;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-family: sans-serif;
-    cursor: pointer;
-    transition: 0.3s;
-    z-index: 9999;
+  bottom: -50px;
+  left: -50px;
+  padding: 14px;
+  font-size: 14px;
+  background-color: #03bad5;
+  color: #fafafa;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 9999;
 }
 
-.up.show{
+.up.show {
   left: 10px;
   bottom: 10px;
 }
 
+/*************************************************** h2 style ****************************************************/
 %h2 {
   color: #37474f;
   padding-top: 32px;
@@ -64,12 +62,9 @@ html {
   }
 }
 
-body {
-  font-family: 'Cairo', sans-serif;
-}
-
+/*************************************************** hero style ****************************************************/
 .hero {
-  background-image: linear-gradient(to right, rgba(0, 172, 217, 0.62)),
+  background-image: linear-gradient(to right, rgba(0, 172, 217, 0.62), #03a9f4),
     url("../image/hero-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -87,26 +82,6 @@ body {
     transform-origin: bottom right;
     right: 0;
     left: 0;
-    @include breakpoints(SmallMobile) {
-      height: 120px;
-      bottom: -100px;
-    }
-    @include breakpoints(mobile) {
-      height: 120px;
-      bottom: -80px;
-    }
-    @include breakpoints(small) {
-      height: 80px;
-      bottom: -80px;
-    }
-    @include breakpoints(medium) {
-      height: 80px;
-      bottom: -80px;
-    }
-    @include breakpoints(medium) {
-      height: 80px;
-      bottom: -80px;
-    }
   }
   .navbar {
     nav {
@@ -114,23 +89,10 @@ body {
       height: 80px;
       color: $main;
       padding: 0px 14px;
-      @include breakpoints(SmallMobile) {
-        height: 60px;
-      }
-
       .logo {
         margin-top: 8px;
-        @include breakpoints(SmallMobile) {
-          @include flex(row, space-between, center);
-          width: 100%;
-          margin-bottom: 20px;
-        }
-
         .img {
           padding-right: 10px;
-          @include breakpoints(SmallMobile) {
-            margin-top: 20px;
-          }
         }
 
         .nav-m {
@@ -138,10 +100,20 @@ body {
             width: 30px;
             margin-top: 10px;
             display: none;
-            @include breakpoints(SmallMobile) {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-end;
+            &.active {
+              span {
+                &:nth-child(2) {
+                  width: 100%;
+                }
+              }
+              + .nav-ul {
+                ul {
+                  z-index: 99;
+                  top: 60px;
+                  opacity: 1;
+                  visibility: visible;
+                }
+              }
             }
             span {
               width: 100%;
@@ -187,25 +159,6 @@ body {
               }
             }
           }
-
-
-            .icon {
-              &:hover {
-                span {
-                  &:nth-child(2) {
-                    width: 100%;
-                  }
-                }
-                + .nav-ul {
-                  ul {
-                    z-index: 99;
-                    top: 60px;
-                    opacity: 1;
-                    visibility: visible;
-                  }
-                }   
-            }
-          }
         }
       }
 
@@ -225,7 +178,7 @@ body {
           transition: 0.3s;
           &:hover {
             font-size: 24px;
-            color: $main;
+            @include link($main);
           }
 
           @include breakpoints(SmallMobile) {
@@ -302,23 +255,22 @@ body {
         margin-bottom: 40px;
       }
       h1 {
-        font-size: 40px;
-        line-height: 48x;
+        font-size: 48px;
+        line-height: 1.2;
         letter-spacing: 2px;
         @include breakpoints(SmallMobile) {
-          font-size: 24px;
-          line-height: 32px;
+          font-size: 32px;
+          line-height: 1.2;
         }
       }
       p {
         color: $main;
-        margin-top: 32px;
-        margin-bottom: 48px;
+        margin: 28px 0px;
         line-height: 26px;
         font-size: 20px;
         font-weight: 700;
         @include breakpoints(SmallMobile) {
-          font-size: 14px;
+          font-size: 16px;
         }
       }
       button {
@@ -357,6 +309,61 @@ body {
     }
   }
 }
+
+/********************************************** respnseve hero style ***********************************************/
+.hero {
+  &::after {
+    @include breakpoints(SmallMobile) {
+      height: 120px;
+      bottom: -100px;
+    }
+    @include breakpoints(mobile) {
+      height: 120px;
+      bottom: -80px;
+    }
+    @include breakpoints(small) {
+      height: 80px;
+      bottom: -80px;
+    }
+    @include breakpoints(medium) {
+      height: 80px;
+      bottom: -80px;
+    }
+    @include breakpoints(medium) {
+      height: 80px;
+      bottom: -80px;
+    }
+  }
+  .navbar {
+    nav {
+      @include breakpoints(SmallMobile) {
+        height: 60px;
+      }
+      .logo {
+        @include breakpoints(SmallMobile) {
+          @include flex(row, space-between, center);
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        .img {
+          @include breakpoints(SmallMobile) {
+            margin-top: 20px;
+          }
+        }
+        .nav-m {
+          .icon {
+            @include breakpoints(SmallMobile) {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .about {
   padding: 0px 40px 0px !important;
   position: relative;
@@ -515,7 +522,7 @@ body {
       margin: 40px auto;
       max-width: 900px;
     }
-    .donlink {
+    .dwonlink {
       @include flex(row, space-between, center);
       a {
         @include link($main);
@@ -856,7 +863,7 @@ body {
         @include link(#8d8c8c);
         margin-right: 10px;
         transition: 0.15s;
-        &:hover{
+        &:hover {
           color: #03bad5;
         }
       }
